@@ -1,3 +1,13 @@
+/********************************
+	Este programa fué hecho por: Héctor Robles Martínez
+		Fecha de Incio: 6 - Noviembre - 2019
+		Fecha de publicación de la primera versión: 19 - Noviembre - 2019
+		Probado en:
+			Ubuntu 18.04.3 LTS
+			
+		Compilador:
+			g++ (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
+*********************************/
 #ifdef __linux__
 	#define LIMPIAR "clear"
 	#include <unistd.h>

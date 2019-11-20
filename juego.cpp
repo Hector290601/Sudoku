@@ -45,7 +45,7 @@ void seleccionar(){
 	cout<<"\033[1;36m"<<"|60|61|62|"<<"\033[1;37m"<<"|63|64|65|"<<"\033[1;30m"<<"|66|67|68|\n";
 	cout<<"\033[1;36m"<<"|70|71|72|"<<"\033[1;37m"<<"|73|74|75|"<<"\033[1;30m"<<"|76|77|78|\n";
 	cout<<"\033[1;36m"<<"|80|81|82|"<<"\033[1;37m"<<"|83|84|85|"<<"\033[1;30m"<<"|86|87|88|\n";
-	sleep(5);
+	sleep(1);
 	system(LIMPIAR);
 	cout<<"Seleccione una coordenada del sudoku:\n";
 	mostrar();
@@ -636,5 +636,103 @@ void verificar(int sel){
 				}
 			}
 		break;
-	}seleccionar();
+	}
+
+	for(i = 0; i <3; i++){//Primer renglón de regiones
+		for(j = 0; j < 3; j++){//región 1
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a1[i][j] == num){
+						a1[x][y] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+		for(j = 3; j < 6; j++){//región 2
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if(a2[i][j] == num){
+						a2[x][y-3] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+		for(j = 6; j < 9; j++){//región 3
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a3[i][j] == num){
+						a3[x][y-6] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+	}
+	for(i = 3; i <6; i++){//Segundo renglón de regiones 
+		for(j = 0; j < 3; j++){//región 4
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a4[i][j] == num){
+						a4[x-3][y] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+		for(j = 3; j < 6; j++){//región 5
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a5[i][j] == num){
+						a5[x-3][y-3] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+		for(j = 6; j < 9; j++){//región 6
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a6[i][j] == num){
+						a6[x-3][y-6] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+	}
+	for(i = 6; i <9; i++){//Tercer renglón de regiones
+		for(j = 0; j < 3; j++){//región 7
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a7[i][j] == num){
+						a7[x-6][y] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+		for(j = 3; j < 6; j++){//región 8
+			if(i == x || j == y){
+				if(i != x && y != j){
+					if (a8[i][j] == num){
+						a8[x-6][y-3] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+		for(j = 6; j < 9; j++){//región 9
+			if(i == x || j == y ){
+				if(i != x && y != j){
+					if (a9[i][j] == num){
+						a9[x-6][y-6] = 0;
+						cout<<"Ese número ya está en la cruz\n";
+					}
+				}
+			}
+		}
+	}
+	seleccionar();
 }
